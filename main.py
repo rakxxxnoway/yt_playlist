@@ -19,7 +19,7 @@ conf = configparser.ConfigParser()
 conf.read("config.ini")
 
 
-# Cheking OS and applying some functions for specific operating system
+# Cheking OS and applying some functions for specific system
 if platform.system().lower() == "windows":
     clear_console = lambda: os.system("cls")
 
