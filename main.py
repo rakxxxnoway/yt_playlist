@@ -36,7 +36,7 @@ else:
 
 
 changes:int = 0
-file_name:str = conf["CHANNEL"]["channel"].replace('"', "")
+file_name:str = conf["CHANNEL"]["file_name"].replace('"', "")
 
 
 def save(dict:dict) -> None:
