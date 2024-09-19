@@ -160,9 +160,9 @@ if __name__ == "__main__":
             if len(user_input) == 1 and user_input[0] == "help":
 
                 print("""
-            (?) Type 'help' for help
-            (?) Type 'watch [video id]' to watch a specific video
-            (?) Type 'watched' to see a list of videos you have watched
+    (?) Type 'help' for help
+    (?) Type 'watch [video id]' to watch a specific video
+    (?) Type 'watched' to see a list of videos you have watched
                 """)
             
 
