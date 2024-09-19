@@ -6,18 +6,25 @@ It does work fine with any type of playlist on YT
 
 Created by rakx | 2022-...
 """
+import sys
 import pickle as DATA
 import configparser
 import webbrowser
 import platform
-import pytube
 import os
 
+import pytube
+
+path = "" # leave blank if needed!
 
 # importing and reading .ini file
 conf = configparser.ConfigParser()
-conf.read("config.ini")
 
+if conf.read(f"{path}config.ini"):
+    print("Config file is loaded!")
+else:
+    print("Config file is NOT loaded! Terminating!")
+    exit()
 
 # Cheking OS and applying some functions for specific system
 if platform.system().lower() == "windows":
@@ -42,14 +49,14 @@ file_name:str = conf["CHANNEL"]["file_name"].replace('"', "")
 def save(dict:dict) -> None:
     """Saves a dict into specific file
     """
-    with open(f"{file_name}.yt", "wb") as file_:
+    with open(f"{path}{file_name}.yt", "wb") as file_:
         DATA.dump(dict, file_)
 
 
 def load_file() -> DATA:
     """Loads data from a specifict data file
     """
-    with open(f"{file_name}.yt", "rb") as file_:
+    with open(f"{path}{file_name}.yt", "rb") as file_:
         return DATA.load(file_)
     
 
